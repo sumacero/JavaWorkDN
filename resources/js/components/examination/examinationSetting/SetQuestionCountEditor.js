@@ -13,9 +13,10 @@ function SetQuestionCountEditor(props) {
             <input
                 type="number"
                 step="1"
-                //min="1"
+                min="1"
                 className={`${props.errors.set_question_count ? 'invalid' : 'valid'}`}
                 onChange={onChanged}
+                value={props.formValues.set_question_count}
             >
             </input>
             問

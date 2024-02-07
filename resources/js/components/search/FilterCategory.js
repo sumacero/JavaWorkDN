@@ -65,7 +65,9 @@ function FilterCategory(props) {
                                 checked={props.checkedCategoryIds.includes(item.category_id)}
                                 onChange={() => toggleChecked(item.category_id)}
                             />
-                            <label htmlFor={"category" + item.category_id}>{item.category_name}</label>
+                            <label htmlFor={"category" + item.category_id}>
+                                {item.category_name}_({item.question_count})
+                            </label>
                         </div>
                     )}
                 </div>

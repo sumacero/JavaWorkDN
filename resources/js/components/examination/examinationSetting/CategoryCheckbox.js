@@ -8,17 +8,14 @@ function CategoryCheckbox(props) {
         const targetCategoryIds = targetCategories.map(category => String(category.category_id));
         const elements = document.getElementsByName("category");
         const isChecked = event.target.checked;
-        // チェック状態を切り替え
-        elements.forEach(
-            e=>{
-                if(targetCategoryIds.includes(e.value))
-                e.checked = isChecked;
-            }
-        );
-        // formパラメータを更新
         const checkedValues = [];
         elements.forEach(
             e=>{
+                // チェック状態を切り替え
+                if(targetCategoryIds.includes(e.value) && 
+                    props.categories.find((category)=>category.category_id == e.value).question_count>0)
+                    e.checked = isChecked;
+                // formパラメータを更新
                 if(e.checked) checkedValues.push(e.value);
             }
         );
@@ -62,6 +59,8 @@ function CategoryCheckbox(props) {
                             value={item.category_id}
                             type="checkbox"
                             onChange={categoryCheck}
+                            defaultChecked={props.formValues.category_ids.includes(item.category_id)}
+                            disabled={item.question_count===0}
                         />
                         <label htmlFor={"category" + item.category_id}>
                             {item.category_name}_({item.question_count})

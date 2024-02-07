@@ -5,16 +5,12 @@ import FilterCategoryModal from './FilterCategoryModal';
 
 
 function FilterMenuArea(props){
-    const [beforeCheckedStatusIds, setBeforeCheckedStatusIds] = useState([]); 
     const [openCategoryFilter, setOpenCategoryFilter] = useState(false);
     const [targetCategoryText, setTargetCategoryText] = useState("条件なし");
     const [beforeCheckedCategoryIds, setBeforeCheckedCategoryIds] = useState([]); 
 
     const clickFilterButton = ()=>{
         props.filterQuestions(1);
-    }
-    const changeKeyword =(event)=>{
-        props.setKeyword(event.target.value);
     }
     return(
         <div>

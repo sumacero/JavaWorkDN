@@ -13,9 +13,10 @@ function SetPassingScoreEditor(props) {
             <input
                 type="number"
                 step="1"
-                //min="1"
+                min="1"
                 className={`${props.errors.set_passing_score ? 'invalid' : 'valid'}`}
                 onChange={onChanged}
+                value={props.formValues.set_passing_score}
             >
             </input>
             問

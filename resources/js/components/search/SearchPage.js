@@ -41,7 +41,7 @@ function SearchPage(){
             setLoginUser(JSON.parse(JSON.stringify(data.loginUser)));
     };
     const getCategories = async () => {
-            const result = await axios.get('get-categories');
+            const result = await axios.get('get-categories-with-question-count');
             const data = result.data.dbData;
             setWorkbooks(JSON.parse(JSON.stringify(data.workbooks)));
             setCategories(JSON.parse(JSON.stringify(data.categories)));

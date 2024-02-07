@@ -12,10 +12,10 @@ function ExaminationSetting(props) {
     const defaultValues = {
         "title": "",
         "memo": "",
-        "set_question_count": "0",
-        "set_passing_score": "0",
-        "set_time": "0",
-        "category_ids": ""
+        "set_question_count": "80",
+        "set_passing_score": "51",
+        "set_time": "180",
+        "category_ids": [26]
     };
     const [formValues, setFormValues] = useState(defaultValues);
     const [workbooks, setWorkbooks] = useState([]);
@@ -51,18 +51,21 @@ function ExaminationSetting(props) {
                         <SetTimeEditor
                             errors = {props.laravelVaridateErrors}
                             setFormValues = {setFormValues}
+                            formValues = {formValues}
                         />
                     </div>
                     <div className="col">
                         <SetQuestionCountEditor
                             errors = {props.laravelVaridateErrors}
                             setFormValues = {setFormValues}
+                            formValues = {formValues}
                         />
                     </div>
                     <div className="col">
                         <SetPassingScoreEditor
                             errors = {props.laravelVaridateErrors}
                             setFormValues = {setFormValues}
+                            formValues = {formValues}
                         />
                     </div>
                 </div>
@@ -76,6 +79,7 @@ function ExaminationSetting(props) {
                         <CategoryCheckbox
                             errors = {props.laravelVaridateErrors}
                             setFormValues = {setFormValues}
+                            formValues = {formValues}
                             workbooks={workbooks}
                             categories={categories}
                         />
