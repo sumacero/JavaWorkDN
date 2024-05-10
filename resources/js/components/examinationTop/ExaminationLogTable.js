@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 
 function ExaminationLogTable(props) {
     const clickDetailButton = (examinationId)=> {
-        let url = "../examination-result/" + examinationId;
+        let url = "examination-result/" + examinationId;
         location = url;
     }
     return (

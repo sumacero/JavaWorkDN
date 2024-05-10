@@ -162,7 +162,7 @@ function ExaminationPage() {
         setIsLoading(true);
         let res1;
         const asyncFunc = async (data) => {
-            res1 = await axios.post('../get-examination-question/', {
+            res1 = await axios.post('get-examination-question', {
                 examination_question_id:data
             });
         };

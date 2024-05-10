@@ -16,7 +16,7 @@ function ConfirmQuestionPage() {
     const [ correctFlag, setCorrectFlag] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios.get('../get-question/' + questionId);
+            const result = await axios.get('get-question/' + questionId);
             const data = result.data;
             console.log(data);
             setQuestion(JSON.parse(JSON.stringify(data.dbData)));

@@ -14,7 +14,7 @@ function ExaminationQuestion(props){
         let les1;
         let tempBool;
         const asyncFunc = async (data) => {
-            les1 = await axios.post('../get-examination-question/', {
+            les1 = await axios.post('get-examination-question', {
                 "examination_question_id":data
             });
         };

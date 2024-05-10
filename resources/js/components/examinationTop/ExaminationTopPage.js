@@ -37,7 +37,7 @@ function ExaminationTopPage() {
         getExaminationLog(1);
     },[]);
     const clickStartButton = () => {
-        let url = "../examination";
+        let url = "examination";
         location = url;
     }
     return (
